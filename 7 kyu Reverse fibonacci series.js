@@ -11,9 +11,7 @@ function reverseFibo (n) {
   if (n === 1) return '0';
   let [result, prev, cur, next] = [[1, 0], 0, 1, 0];
   while (n > 2) {
-    next = prev + cur;
-    prev = cur;
-    cur = next;
+    [next, prev, cur] = [prev + cur, cur, next];
     result.unshift(next);
     n--;
   }
